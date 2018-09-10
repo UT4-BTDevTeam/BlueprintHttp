@@ -7,6 +7,7 @@ UT4/UE4.15 plugin exposing nonintrusive blueprint nodes for http (json)
 - [Receiving complex json objects](#receivejson)
 - [Sending custom headers](#headers)
 - [Decent error handling](#errors)
+- [Important notes about Latent nodes](#latent)
 - [About "non-intrusive" blueprint nodes](#nonintrusive)
 
 <a name="httpget"></a>
@@ -69,6 +70,10 @@ Todo.
 
 <a name="errors"></a>
 ## Error handling
+Todo.
+
+<a name="latent"></a>
+## Important notes about Latent nodes
 Todo.
 
 <a name="nonintrusive"></a>
