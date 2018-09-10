@@ -2,7 +2,7 @@
 UT4/UE4.15 plugin exposing nonintrusive blueprint nodes for http (json)
 
 - [Http GET](#httpget)
-- [Http POST with a JSON body](#httppost)
+- [Http POST with a json body](#httppost)
 - [Building complex json objects](#buildjson)
 - [Receiving complex json objects](#receivejson)
 - [Sending custom headers](#headers)
@@ -20,6 +20,45 @@ UT4/UE4.15 plugin exposing nonintrusive blueprint nodes for http (json)
 
 <a name="receivejson"></a>
 ## Receiving complex JSON
+After checking for request success, retrieving response data is done through the ***Keys*** and ***Values*** output pins.
+As their names imply, Keys contains an array of keys, and Values contains an array of values.
+Now while it is obvious how it works with a simple json object, the same process is applied to complex objects through the process of ***flattening***.
+
+Nothing better than an example to illustrate, consider the following json object :
+```json
+{
+  "name": "Brice",
+  "age": 42,
+  "activities": [ "Surfer", "Winner" ],
+  "city": {
+    "name": "Nice",
+    "coords": { "lat": 43.710339, "lng": 7.261742 }
+  },
+  "matches": [
+    { "kills": 10, "deaths": 9, "win": true },
+    { "kills": 4, "deaths": 12, "win": false }
+  ]
+}
+```
+In order to give all necessary information to blueprints, it will be flattened and filled into the Keys/Values arrays like this :
+```json
+"name"              : "Brice",
+"age"               : "42",
+"activities.length" : "2",
+"activities.0"      : "Surfer",
+"activities.1"      : "Winner",
+"city.name"         : "Nice",
+"city.coords.lat"   : "43.710339",
+"city.coords.lng"   : "7.261742",
+"matches.length"    : "2",
+"matches.0.kills"   : "10",
+"matches.0.deaths"  : "9",
+"matches.0.win"     : "true",
+"matches.1.kills"   : "4",
+"matches.1.deaths"  : "12",
+"matches.1.win"     : "false",
+```
+Hopefully this sheds some light, you should be able to read complex json results now!
 
 <a name="headers"></a>
 ## Sending custom headers
