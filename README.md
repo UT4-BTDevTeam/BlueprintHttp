@@ -1,6 +1,33 @@
 # BlueprintHttp
 UT4/UE4.15 plugin exposing nonintrusive blueprint nodes for http (json)
 
+- [Http GET](#httpget)
+- [Http POST with a JSON body](#httppost)
+- [Building complex json objects](#buildjson)
+- [Receiving complex json objects](#receivejson)
+- [Sending custom headers](#headers)
+- [Decent error handling](#errors)
+- [About "non-intrusive" blueprint nodes](#nonintrusive)
+
+<a name="httpget"></a>
+## Http GET
+
+<a name="httppost"></a>
+## Http POST
+
+<a name="buildjson"></a>
+## Building complex JSON
+
+<a name="receivejson"></a>
+## Receiving complex JSON
+
+<a name="headers"></a>
+## Sending custom headers
+
+<a name="errors"></a>
+## Error handling
+
+<a name="nonintrusive"></a>
 ## About "non-intrusive" blueprint nodes
 When a blueprint uses native nodes from a plugin, it creates a ***dependency*** between the PAK and the plugin.
 This dependency can be ***weaker*** or ***stronger*** depending on cases.
