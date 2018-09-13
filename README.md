@@ -33,15 +33,29 @@ Todo.
 
 <a name="buildjson"></a>
 ## Building complex JSON
-Todo.
+The library provides two straightforward for building simple to complex JSON in blueprint, taking care of formatting and escaping problems.
+
+[img]()
+
+***Make Json Object*** generates a properly formatted JSON object as string, ready to be used as a POST Body, or as a "value" of type `object` when constructing a json object, or when constructing a json array of objects.
+
+[img]()
+
+***Make Json Array*** generates a properly formatted JSON array as string, ready to be used as a "value" of type `array` when constructing a json object, or when constructing a json array of arrays.
+
+In either case, the ***Types*** array must specify, for each value, the desired type of the value : `string` , `number` , `boolean` , `object` , or `array`. This tells the plugin how to format each value properly, rather than treating them all as strings.
+- For `number` and `boolean`, simply add your int/float/bool variable into ***Values*** and let editor cast them to strings. Don't forget to specify the proper type.
+- For `string`, the plugin will take care of wrapping in quotes and escaping bad characters.
+- For `object` and `array`, the corresponding input value *should* be the result of a prior **Make Json Object** or **Make Json Array** node.
 
 <a name="receivejson"></a>
 ## Receiving complex JSON
-After checking for request success, retrieving response data is done through the ***Keys*** and ***Values*** output pins.
-As their names imply, Keys contains an array of keys, and Values contains an array of values.
-Now while it is obvious how it works with a simple json object, the same process is applied to complex objects through the process of ***flattening***.
+Retrieving response data is done through the ***Keys*** and ***Values*** output pins.
+As their names imply, **Keys** contains an array of keys, and **Values** contains an array of values.
+- When the response object is *simple*, keys and values are trivially pushed to their respective array.
+- When the response object is *complex*, the same method is used after a ***flattening*** process.
 
-Nothing better than an example to illustrate, consider the following json object :
+Nothing better than an example to illustrate, consider the following *complex* json object :
 ```json
 {
   "name": "Brice",
@@ -57,7 +71,7 @@ Nothing better than an example to illustrate, consider the following json object
   ]
 }
 ```
-In order to give all necessary information to blueprints, it will be flattened and filled into the Keys/Values arrays like this :
+In order to give all necessary information to blueprints, it will be **flattened** and pushed into the **Keys** & **Values** like this :
 ```json
 "name"              : "Brice",
 "age"               : "42",
@@ -75,7 +89,6 @@ In order to give all necessary information to blueprints, it will be flattened a
 "matches.1.deaths"  : "12",
 "matches.1.win"     : "false",
 ```
-Hopefully this sheds some light, you should be able to read complex json results now!
 
 <a name="headers"></a>
 ## Sending custom headers
