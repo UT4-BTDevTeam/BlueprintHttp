@@ -9,7 +9,7 @@ UT4/UE4.15 plugin exposing nonintrusive blueprint nodes for http (json)
 - [Building complex json objects](#buildjson)
 - [Receiving complex json objects](#receivejson)
 - [Sending custom headers](#headers)
-- [Decent error handling](#errors)
+- [Error handling](#errors)
 - [Important notes about Latent nodes](#latent)
 - [About "non-intrusive" blueprint nodes](#nonintrusive)
 
@@ -100,7 +100,11 @@ Adding or overriding headers is pretty straightforward, using the ***Header Keys
 
 <a name="errors"></a>
 ## Error handling
-Todo.
+The ***success*** pin is currently directly bound to the internal result of the HTTP Request, which can be occasionally be a bit obscure. Basically, some HTTP codes are considered success from the request point of view, despite being error status codes.
+
+Therefore, while it is certain the request failed when `success=false`, having `success=true` does not guarantee actual success. It is suggested to do the following :
+
+[img: error handling]()
 
 <a name="latent"></a>
 ## Important notes about Latent nodes
