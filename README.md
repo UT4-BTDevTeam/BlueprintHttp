@@ -1,6 +1,7 @@
 # BlueprintHttp
 UT4/UE4.15 plugin exposing nonintrusive blueprint nodes for http (json)
 
+- [Installing plugin](#install)
 - [Http GET](#httpget)
 - [Http POST with a json body](#httppost)
 - [Building complex json objects](#buildjson)
@@ -9,6 +10,18 @@ UT4/UE4.15 plugin exposing nonintrusive blueprint nodes for http (json)
 - [Decent error handling](#errors)
 - [Important notes about Latent nodes](#latent)
 - [About "non-intrusive" blueprint nodes](#nonintrusive)
+
+<a name="install"></a>
+## Installing plugin
+Download repository ZIP, extract, and paste the entire folder into the `Engine/Plugins/Runtime/` folder of your UT build.
+
+Make sure the result path looks like this :
+```bash
+# editor
+UTEditor/Engine/Plugins/Runtime/BlueprintHttp-master/Binaries/Win64/UE4Editor-BlueprintHttp.dll
+# linux server
+UTServer/Engine/Plugins/Runtime/BlueprintHttp-master/Binaries/Linux/libUE4Server-BlueprintHttp-Linux-Shipping.so
+```
 
 <a name="httpget"></a>
 ## Http GET
