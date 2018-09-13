@@ -10,7 +10,7 @@ UT4/UE4.15 plugin exposing nonintrusive blueprint nodes for http (json)
 - [Receiving complex json objects](#receivejson)
 - [Sending custom headers](#headers)
 - [Error handling](#errors)
-- [Important notes about Latent nodes](#latent)
+- [Important notes about Latent actions](#latent)
 - [About "non-intrusive" blueprint nodes](#nonintrusive)
 
 <a name="install"></a>
@@ -107,7 +107,7 @@ Therefore, while it is certain the request failed when `success=false`, having `
 [img: error handling]()
 
 <a name="latent"></a>
-## Important notes about Latent nodes
+## Important notes about Latent actions
 Todo.
 
 <a name="nonintrusive"></a>
