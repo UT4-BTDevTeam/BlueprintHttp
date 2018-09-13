@@ -35,11 +35,11 @@ Todo.
 ## Building complex JSON
 The library provides two straightforward for building simple to complex JSON in blueprint, taking care of formatting and escaping problems.
 
-[img]()
+[img: make json object node]()
 
 ***Make Json Object*** generates a properly formatted JSON object as string, ready to be used as a POST Body, or as a "value" of type `object` when constructing a json object, or when constructing a json array of objects.
 
-[img]()
+[img: make json array node]()
 
 ***Make Json Array*** generates a properly formatted JSON array as string, ready to be used as a "value" of type `array` when constructing a json object, or when constructing a json array of arrays.
 
@@ -47,6 +47,8 @@ In either case, the ***Types*** array must specify, for each value, the desired 
 - For `number` and `boolean`, simply add your int/float/bool variable into ***Values*** and let editor cast them to strings. Don't forget to specify the proper type.
 - For `string`, the plugin will take care of wrapping in quotes and escaping bad characters.
 - For `object` and `array`, the corresponding input value *should* be the result of a prior **Make Json Object** or **Make Json Array** node.
+
+[img: complex json graph]()
 
 <a name="receivejson"></a>
 ## Receiving complex JSON
@@ -92,7 +94,15 @@ In order to give all necessary information to blueprints, it will be **flattened
 
 <a name="headers"></a>
 ## Sending custom headers
-Todo.
+By default the plugin sets the following headers :
+```
+Content-Type: application/json
+Accept: application/json
+User-Agent: X-UnrealEngine-Agent
+```
+Adding or overriding headers is pretty straightforward, using the ***Header Keys*** and ***Header Values*** input pins. Similarly to JSON objects, one array for the keys and one array for the values.
+
+[img: example]()
 
 <a name="errors"></a>
 ## Error handling
