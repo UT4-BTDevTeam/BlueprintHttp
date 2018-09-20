@@ -41,6 +41,8 @@ In either case, the ***Types*** array must specify, for each value, the desired 
 - For `string`, the plugin will take care of wrapping in quotes and escaping bad characters.
 - For `object` and `array`, the corresponding input value *should* be the result of a prior **Make Json Object** or **Make Json Array** node.
 
+Here is an example of mixing these nodes together in order to build a complex json body :
+
 ![image](https://github.com/UT4-BTDevTeam/BlueprintHttp/blob/master/docs/complex_json.png?raw=true)
 
 <a name="receivejson"></a>
