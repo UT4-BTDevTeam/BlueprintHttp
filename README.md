@@ -1,9 +1,8 @@
 # BlueprintHttp
 UT4/UE4.15 plugin exposing nonintrusive blueprint nodes for http (json)
 
-[img: http get node]()
-
-[img: http post node]()
+![image](https://github.com/UT4-BTDevTeam/BlueprintHttp/blob/master/docs/http_get.png?raw=true)
+![image](https://github.com/UT4-BTDevTeam/BlueprintHttp/blob/master/docs/http_post.png?raw=true)
 
 - [Installing plugin](#install)
 - [Building complex json objects](#buildjson)
@@ -29,11 +28,11 @@ UTServer/Engine/Plugins/Runtime/BlueprintHttp-master/Binaries/Linux/libUE4Server
 ## Building complex JSON
 The library provides two straightforward for building simple to complex JSON in blueprint, taking care of formatting and escaping problems.
 
-[img: make json object node]()
+![image](https://github.com/UT4-BTDevTeam/BlueprintHttp/blob/master/docs/make_json_object.png?raw=true)
 
 ***Make Json Object*** generates a properly formatted JSON object as string, ready to be used as a POST Body, or as a "value" of type `object` when constructing a json object, or when constructing a json array of objects.
 
-[img: make json array node]()
+![image](https://github.com/UT4-BTDevTeam/BlueprintHttp/blob/master/docs/make_json_array.png?raw=true)
 
 ***Make Json Array*** generates a properly formatted JSON array as string, ready to be used as a "value" of type `array` when constructing a json object, or when constructing a json array of arrays.
 
@@ -42,7 +41,7 @@ In either case, the ***Types*** array must specify, for each value, the desired 
 - For `string`, the plugin will take care of wrapping in quotes and escaping bad characters.
 - For `object` and `array`, the corresponding input value *should* be the result of a prior **Make Json Object** or **Make Json Array** node.
 
-[img: complex json graph]()
+![image](https://github.com/UT4-BTDevTeam/BlueprintHttp/blob/master/docs/complex_json.png?raw=true)
 
 <a name="receivejson"></a>
 ## Receiving complex JSON
@@ -96,7 +95,7 @@ User-Agent: X-UnrealEngine-Agent
 ```
 Adding or overriding headers is pretty straightforward, using the ***Header Keys*** and ***Header Values*** input pins. Similarly to JSON objects, one array for the keys and one array for the values.
 
-[img: example]()
+![image](https://github.com/UT4-BTDevTeam/BlueprintHttp/blob/master/docs/headers_example.png?raw=true)
 
 <a name="errors"></a>
 ## Error handling
@@ -104,7 +103,7 @@ The ***success*** pin is currently directly bound to the internal result of the 
 
 Therefore, while it is certain the request failed when `success=false`, having `success=true` does not guarantee actual success. It is suggested to do the following :
 
-[img: error handling]()
+![image](https://github.com/UT4-BTDevTeam/BlueprintHttp/blob/master/docs/error_handling.png?raw=true)
 
 <a name="latent"></a>
 ## Important notes about Latent actions
