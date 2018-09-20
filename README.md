@@ -5,6 +5,7 @@ UT4/UE4.15 plugin exposing nonintrusive blueprint nodes for http (json)
 ![image](https://github.com/UT4-BTDevTeam/BlueprintHttp/blob/master/docs/http_post.png?raw=true)
 
 - [Installing plugin](#install)
+- [Blueprint plugin detection](#detection)
 - [Building complex json objects](#buildjson)
 - [Receiving complex json objects](#receivejson)
 - [Sending custom headers](#headers)
@@ -23,6 +24,14 @@ UTEditor/Engine/Plugins/Runtime/BlueprintHttp-master/Binaries/Win64/UE4Editor-Bl
 # linux server
 UTServer/Engine/Plugins/Runtime/BlueprintHttp-master/Binaries/Linux/libUE4Server-BlueprintHttp-Linux-Shipping.so
 ```
+
+<a name="detection"></a>
+## Blueprint plugin detection
+Thanks to the fact this plugin only exposes *non-intrusive* node, you can build mutators with optional HTTP support in them, and distribute them without worrying about whether server admins have installed the plugin or not.
+
+Furthermore, the **plugin detection node** lets you determine in real-time if plugin is available, allowing you to set up fall back mechanisms :
+
+![image](https://github.com/UT4-BTDevTeam/BlueprintHttp/blob/master/docs/plugin_detection.png?raw=true)
 
 <a name="buildjson"></a>
 ## Building complex JSON
