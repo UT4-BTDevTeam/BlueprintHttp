@@ -1,0 +1,23 @@
+{
+	"FileVersion" : 3,
+	
+	"FriendlyName" : "BlueprintHttp",
+	"Version" : 1,
+	"VersionName" : "1.0",
+	"CreatedBy" : "Chatouille",
+	"CreatedByURL" : "",
+	"EngineVersion" : "4.15.0",
+	"Description" : "BlueprintHttp",
+	"Category" : "",
+	"EnabledByDefault" : true,
+	"CanContainContent" : false,
+	
+	"Modules" :
+	[
+		{
+			"Name" : "BlueprintHttp",
+			"Type" : "Runtime",
+			"WhitelistPlatforms" : [ "Win32", "Win64", "Linux" ]
+		}
+	]
+}

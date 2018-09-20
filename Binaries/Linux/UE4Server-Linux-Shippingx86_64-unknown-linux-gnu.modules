@@ -1,0 +1,8 @@
+{
+	"Changelist" : 3525109,
+	"BuildId" : "4a04b07a-b97d-49eb-af3a-45756aa0a648",
+	"Modules" : 
+	{
+		"BlueprintHttp" : "libUE4Server-BlueprintHttp-Linux-Shipping.so"
+	}
+}
