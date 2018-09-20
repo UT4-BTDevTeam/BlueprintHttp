@@ -26,7 +26,7 @@ UTServer/Engine/Plugins/Runtime/BlueprintHttp-master/Binaries/Linux/libUE4Server
 
 <a name="buildjson"></a>
 ## Building complex JSON
-The library provides two straightforward for building simple to complex JSON in blueprint, taking care of formatting and escaping problems.
+The library provides two straightforward nodes for building simple to complex JSON in blueprint, taking care of formatting and escaping problems.
 
 ![image](https://github.com/UT4-BTDevTeam/BlueprintHttp/blob/master/docs/make_json_object.png?raw=true)
 
